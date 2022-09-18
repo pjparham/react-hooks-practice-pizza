@@ -8,9 +8,9 @@
     },
     {
       "id": 2,
-      "topping": "Pepperoni",
-      "size": "Small",
-      "vegetarian": false
+      "topping": "Vegan Pepperoni",
+      "size": "Medium",
+      "vegetarian": true
     },
     {
       "id": 3,
@@ -26,8 +26,8 @@
     },
     {
       "id": 5,
-      "topping": "Bacon",
-      "size": "Medium",
+      "topping": "Bacon with Pineapple",
+      "size": "Large",
       "vegetarian": false
     },
     {
@@ -38,9 +38,9 @@
     },
     {
       "id": 7,
-      "topping": "Black Olive",
+      "topping": "Olive",
       "size": "Medium",
-      "vegetarian": true
+      "vegetarian": false
     },
     {
       "id": 8,
