@@ -8,6 +8,16 @@ function App() {
   const [pizzaTopping, setPizzaTopping] = useState("")
   const [pizzaSize, setPizzaSize] = useState("Small")
   const [vegetarian, setVegetarian] = useState(true)
+  const [pizzaId, setPizzaId] = useState("")
+
+  function handleUpdatePizza(updatedPizza){
+    const updatedPizzas = pizzas.map((pizza) => {
+      if (pizza.id === updatedPizza.id) {
+        return updatedPizza
+      } else {return pizza}
+    });
+    setPizzas(updatedPizzas)
+  }
 
   return (
     <>
@@ -19,6 +29,8 @@ function App() {
         setPizzaSize={setPizzaSize}
         vegetarian={vegetarian}
         setVegetarian={setVegetarian}
+        pizzaId={pizzaId}
+        handleUpdatePizza={handleUpdatePizza}
       />
       <PizzaList 
         pizzas={pizzas} 
@@ -26,6 +38,7 @@ function App() {
         setPizzaTopping={setPizzaTopping}
         setPizzaSize={setPizzaSize}
         setVegetarian={setVegetarian}
+        setPizzaId={setPizzaId}
       />
     </>
   );

@@ -1,13 +1,16 @@
 import React from "react";
 
-function Pizza({ pizza, setPizzaTopping, setPizzaSize, setVegetarian }) {
-  const {topping, size, vegetarian} = pizza
+function Pizza({ pizza, setPizzaTopping, setPizzaSize, setVegetarian, setPizzaId }) {
+  const {topping, size, vegetarian, id} = pizza
 
   function haneleEditClick(){
     setPizzaTopping(topping);
     setPizzaSize(size);
     setVegetarian(vegetarian)
+    setPizzaId(id)
   }
+
+  
   return (
     <tr>
       <td>{topping}</td>

@@ -6,8 +6,11 @@ function PizzaForm({
   pizzaSize,
   setPizzaSize,
   vegetarian,
-  setVegetarian
+  setVegetarian,
+  pizzaId,
+  handleUpdatePizza
 }) {
+  ///these are what set our info
   function vegetarianChange(){
     setVegetarian(!vegetarian)
   }
@@ -18,6 +21,7 @@ function PizzaForm({
     setPizzaSize(e.target.value)
   }
 
+  ///this handles updating our pizza object on front and back end
   function handleSubmit(e){
     e.preventDefault()
     const newPizza = {
@@ -25,8 +29,17 @@ function PizzaForm({
       size: pizzaSize,
       vegetarian: vegetarian
     }
-    console.log(newPizza)
+  fetch(`http://localhost:3001/pizzas/${pizzaId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPizza)
+  })
+  .then((r) => r.json())
+  .then((updatedPizza) => handleUpdatePizza(updatedPizza))
   }
+  
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-row">

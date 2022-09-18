@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Pizza from "./Pizza";
 
-function PizzaList({ pizzas, setPizzas, setPizzaTopping, setPizzaSize, setVegetarian } ) {
+function PizzaList({ pizzas, setPizzas, setPizzaTopping, setPizzaSize, setVegetarian, setPizzaId } ) {
   useEffect(() => {
     fetch(`http://localhost:3001/pizzas`)
     .then((r) => r.json())
@@ -15,6 +15,7 @@ function PizzaList({ pizzas, setPizzas, setPizzaTopping, setPizzaSize, setVegeta
               setPizzaTopping={setPizzaTopping}
               setPizzaSize={setPizzaSize}
               setVegetarian={setVegetarian}
+              setPizzaId={setPizzaId}
             />
   })
 
